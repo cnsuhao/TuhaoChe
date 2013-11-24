@@ -14,5 +14,11 @@ def homepage():
 
 @app.route('/public/')
 def public_timeline():
-    news_list = OursNews.select().order_by(('created_at', 'desc'))
-    return object_list('index.html', news_list, 'news_list')
+    news_list = OursNews.select().order_by('score')
+    return object_list('index.html', news_list, "news_list")
+
+@app.route('/ournews/<int:news_id>/')
+def news_detail(news_id):
+    obj = get_object_or_404(OursNews, id=news_id)
+    return render_template('news_detail.html', obj=obj)
+    

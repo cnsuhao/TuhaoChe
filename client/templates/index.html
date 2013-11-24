@@ -3,9 +3,9 @@
 {% block content_title %}Public Timeline{% endblock %}
 
 {% block content %}
-  <ul>
-    {% for news in news_list %}
-      <li>{% include "includes/oursnews.html" %}</li>
+  <ul class="nav nav-list">
+    {% for obj in news_list %}
+      <li><a href="{{ url_for('news_detail', news_id=obj.id) }}">{{ obj.name }}</a></li>
     {% endfor %}
   </ul>
   {% include "includes/pagination.html" %}

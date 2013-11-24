@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content_title %} {{ obj.name  }} {% endblock %}
+
+{% block content %}
+	<ul class="description">
+	    <li>权重： {{ obj.score }} </li>
+	    <li>内容： {{ obj.text }} </li>
+	</ul>
+{% endblock %}
