@@ -27,9 +27,12 @@ start web server
     
 #api
 
-oursnews
+oursnews | news
     
-    curl http://localhost:5000/api/oursnews/
+    curl http://localhost:5000/api/oursnews/?ordering=score
+    curl http://localhost:5000/api/oursnews/1/
+    
+    curl -u admin:admin -X POST -d data='{"text": "shanghai"}' http://127.0.0.1:5000/api/oursnews/
     curl -u admin:admin -X PUT -d data='{"text": "shanghai"}' http://127.0.0.1:5000/api/oursnews/1/
     curl -u admin:admin -X DELETE http://127.0.0.1:5000/api/oursnews/1/
 

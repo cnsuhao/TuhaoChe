@@ -61,7 +61,7 @@ class News(db.Model):
     ret_text = CharField()
     # ---------------------
     created_at = DateTimeField(default=datetime.datetime.now)
-  
+    score = IntegerField()
      
 class OursNews(db.Model):
    user = ForeignKeyField(User)
@@ -83,3 +83,4 @@ class OursNews(db.Model):
    ret_text = CharField()
    # ---------------------
    created_at = DateTimeField(default=datetime.datetime.now)
+   score = IntegerField()
