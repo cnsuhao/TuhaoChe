@@ -1,6 +1,6 @@
-# pinche
+# TuhaoChe
 
-This is an tools for pinche
+This is an tools for tuhaoche
 
 # prepare the dev environment
 
@@ -20,9 +20,6 @@ init database
     mysql -u root -e "GRANT ALL PRIVILEGES ON thc.* TO 'thc'@'%' WITH GRANT OPTION";
 
     python utils/db_init.py
-    
-    curl -u admin:admin -d data='{"name": "chengdu"}' http://127.0.0.1:5000/api/city/
-    curl -u admin:admin -d data='{"name": "shanghai"}' http://127.0.0.1:5000/api/city/
 
 start web server
 
@@ -33,15 +30,8 @@ start web server
 oursnews
     
     curl http://localhost:5000/api/oursnews/
-    curl -u admin:admin -X PUT -d data='{"name": "shanghai"}' http://127.0.0.1:5000/api/city/1/
-    curl -u admin:admin -X DELETE http://127.0.0.1:5000/api/city/1/
-
-pinche
-
-    curl http://127.0.0.1:5000/api/pinche/?city=1
-    curl -u admin:admin -d data='{"city": 1, "title": "pinche", "car": "audi", "time": "20130428 12:00", "phone": "12345", "route": "to chengdu", "publisher": "who", "content": "this is body."}' http://127.0.0.1:5000/api/pinche/
-    curl -u admin:admin -X PUT -d data='{"city": 1, "title": "pinche", "car": "audi", "time": "20130428 12:00", "phone": "12345", "route": "to chengdu", "publisher": "who", "content": "this is updated body."}' http://127.0.0.1:5000/api/pinche/1/
-    curl -u admin:admin -X DELETE http://127.0.0.1:5000/api/pinche/1/
+    curl -u admin:admin -X PUT -d data='{"text": "shanghai"}' http://127.0.0.1:5000/api/oursnews/1/
+    curl -u admin:admin -X DELETE http://127.0.0.1:5000/api/oursnews/1/
 
 # Thanks
 
